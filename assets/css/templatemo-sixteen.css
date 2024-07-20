@@ -1,12 +1,5 @@
-/*
-
-TemplateMo 546 Sixteen Clothing
-
-https://templatemo.com/tm-546-sixteen-clothing
-
-*/
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Gothic 60', sans-serif;
   overflow-x: hidden;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -619,7 +612,6 @@ footer .inner-content p a {
 	padding-bottom: 10px;
 	margin-bottom: 60px;
 }
-
 .products .filters li {
 	text-transform: uppercase;
 	font-size: 13px;
@@ -644,6 +636,7 @@ footer .inner-content p a {
 .products ul.pages li {
 	display: inline-block;
 	margin: 0px 2px;
+	
 }
 
 .products ul.pages li a {
