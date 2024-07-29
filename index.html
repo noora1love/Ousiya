@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="assets/css/fontawesome.css">
     <link rel="stylesheet" href="assets/css/templatemo-sixteen.css">
     <link rel="stylesheet" href="assets/css/owl.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
 
   </head>
 
@@ -320,8 +322,45 @@
         </div>
       </div>
     </div>
+    <br><br><br>
+    <hr>
+    <div class="container" id="section">
+      <!-- Slider main container -->
+      <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide">
+            <h3>Nazvanie Apparata</h3>
+            <div class="slider-video">
+              <video src="1.mp4" type="video/mp4"></video>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <h3>Nazvanie Apparata</h3>
+            <div class="slider-video">
+              <video src="2.mp4" type="video/mp4"></video>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <h3>Nazvanie Apparata</h3>
+            <div class="slider-video">
+              <video src="3.mp4" type="video/mp4"></video>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <h3>Nazvanie Apparata</h3>
+            <div class="slider-video">
+              <video src="4.mp4" type="video/mp4"></video>
+            </div>
+          </div>
+          <!-- Add more slides as needed -->
+        </div>
+    
 
-
+      </div>
+    </div>
+    <hr>    
 
     <div class="send-message">
       <div class="container">
@@ -428,7 +467,9 @@
         </div>
       </div>
     </div>
+    
 
+    
 
     <footer>
       <div class="container">
@@ -445,7 +486,7 @@
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <!-- Additional Scripts -->
     <script src="assets/js/custom.js"></script>
@@ -453,7 +494,6 @@
     <script src="assets/js/slick.js"></script>
     <script src="assets/js/isotope.js"></script>
     <script src="assets/js/accordions.js"></script>
-
 
     <script language = "text/Javascript"> 
       cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
@@ -465,7 +505,46 @@
           }
       }
     </script>
-
+    <script>
+      const swiper = new Swiper('.swiper', {
+        loop: false,
+        slidesPerView: "auto",
+        spaceBetween: 33,
+        centeredSlides: true,
+      
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        on: {
+          init: function () {
+            const videos = document.querySelectorAll('video');
+            const activeIndex = this.realIndex;
+            const activeSlide = document.getElementsByClassName('swiper-slide')[activeIndex];
+            const activeVideo = activeSlide.getElementsByTagName('video')[0];
+            activeVideo.muted = true;
+            Array.prototype.forEach.call(videos, function(video){
+              video.pause();
+              video.currentTime = 0;
+            });
+            activeVideo.play();
+          },
+          slideChange: function () {
+            const videos = document.querySelectorAll('video');
+            const activeIndex = this.realIndex;
+            const activeSlide = document.getElementsByClassName('swiper-slide')[activeIndex];
+            const activeVideo = activeSlide.getElementsByTagName('video')[0];
+            activeVideo.muted = true;
+            Array.prototype.forEach.call(videos, function(video){
+              video.pause();
+              video.currentTime = 0;
+            });
+            activeVideo.play();
+          },
+        },
+      });
+      
+    </script>
 
   </body>
 
