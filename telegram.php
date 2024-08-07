@@ -2,7 +2,7 @@
 
 $name = $_POST['name'];
 $phone = $_POST['phone'];
-$email = $_POST['email'];
+$message = $_POST['message'];
 $token = "7071123260:AAEf4JqzcosBt5vCaByXUUMk6xNITYhHSic";
 $chat_id = "-4217055405";
 $arr = array(
